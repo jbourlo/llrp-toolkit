@@ -48,7 +48,7 @@ llrp2xml : llrp2xml.o $(LTKC_LIB)
 xml2llrp.o : xml2llrp.c $(LTKC_HDRS)
 	$(CC) -c $(CFLAGS) xml2llrp.c -o xml2llrp.o
 
-xml2llrp : xml2llrp.o $(LTKC_LIB) $(XML2_LIB)
+xml2llrp : xml2llrp.o $(LTKC_LIB)
 	$(CC) $(CFLAGS) -o xml2llrp xml2llrp.o $(LTKC_LIB) $(XML2_LIB)
 
 dx201 : dx201.o $(LTKC_LIB)
