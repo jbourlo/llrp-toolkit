@@ -16,10 +16,12 @@
 ############################################################################
 
 #CFLAGS = -O -Wall
-AR              = ar
-CC              = gcc
-CFLAGS          = -g -Wall
-CINCLUDES	= `pkg-config libxml-2.0 --cflags`
+AR              = arm-linux-gnueabi-ar
+CC              = arm-linux-gnueabi-gcc
+#AR              = ar
+#CC              = gcc
+CFLAGS          = -g -Wall -static
+CINCLUDES	= -I/usr/include/libxml2
 
 LLRPDEF         = ../../Definitions/Core/llrp-1x0-def.xml
 
@@ -36,7 +38,7 @@ LTKC_HDRS = \
 	ltkc_xmltext.h		\
 	out_ltkc.h
 
-LTKC_LIB = libltkc.a
+LTKC_LIB = libltkc.so
 LTKC_OBJS = \
 	ltkc_array.o		\
 	ltkc_connection.o	\

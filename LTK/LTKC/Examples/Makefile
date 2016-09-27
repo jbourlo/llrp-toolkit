@@ -19,9 +19,12 @@ LIBDIR=../Library
 INCL = -I$(LIBDIR)
 
 #CFLAGS = -O -Wall $(INCL)
-AR          = ar
-CC          = gcc
-CFLAGS      = -g -Wall $(INCL)
+#AR          = arm-linux-gnueabi-ar
+#CC          = arm-linux-gnueabi-gcc
+AR	= ar
+CC	= gcc
+CFLAGS      = -g -Wall $(INCL) -I.
+LDFLAGS = -lltkc
 
 LTKC_LIB = $(LIBDIR)/libltkc.a
 LTKC_HDRS = \
@@ -38,8 +41,8 @@ all: example1
 everything:
 	make all
 
-example1 : example1.o $(LTKC_LIB)
-	$(CC) $(CFLAGS) -o example1 example1.o $(LTKC_LIB)
+example1 : example1.o 
+	$(CC) $(CFLAGS) -o example1 example1.o $(LDFLAGS)
 
 example1.o : example1.c $(LTKC_HDRS)
 	$(CC) -c $(CFLAGS) example1.c -o example1.o
