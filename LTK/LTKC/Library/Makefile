@@ -18,9 +18,9 @@
 #CFLAGS = -O -Wall
 AR              = arm-linux-gnueabi-ar
 CC              = arm-linux-gnueabi-gcc
-#AR              = ar
-#CC              = gcc
-CFLAGS          = -g -Wall -static
+AR              = ar
+CC              = gcc
+CFLAGS          = -g -Wall
 CINCLUDES	= -I/usr/include/libxml2
 
 LLRPDEF         = ../../Definitions/Core/llrp-1x0-def.xml
